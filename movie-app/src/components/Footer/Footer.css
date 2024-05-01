@@ -1,0 +1,40 @@
+.Movie-footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: rgba(250, 250, 252, .8);
+    color: rgba(0, 0, 0, 0.96);;
+    text-align: center;
+}
+
+@supports ((-webkit-backdrop-filter: initial) or (backdrop-filter: initial)) {
+    .Movie-footer{
+        backdrop-filter: saturate(180%) blur(20px);
+        background-color: rgba(250, 250, 252, .8);
+    }
+}
+
+.movie-footer__left {
+    order: 1;
+}
+
+.clr-secondary-text {
+    color: rgba(0, 0, 0, 0.96);
+}
+
+.movie-footer__links {
+    margin-top: 4px;
+}
+
+.moview-footer-link-links {
+    -webkit-border-end: 1px solid rgba(0, 0, 0, 0.96);
+    -moz-border-end: 1px solid rgba(0, 0, 0, 0.96);
+    border-inline-end: 1px solid rgba(0, 0, 0, 0.96);
+    display: inline-block;
+    margin-top: 5px;
+    white-space: nowrap;
+    margin-right: 7px;
+    padding-right: 10px;
+    color: rgba(0, 0, 0, 0.96);
+}

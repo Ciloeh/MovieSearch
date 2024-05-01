@@ -1,0 +1,236 @@
+.movies_nav-header,.movies-header-wrapper {
+    height: 44px;
+    background-color: rgba(250, 250, 252, .8);
+}
+
+@supports ((-webkit-backdrop-filter: initial) or (backdrop-filter: initial)) {
+    .movies_nav-header,.movies-header-wrapper{
+        backdrop-filter: saturate(180%) blur(20px);
+        background-color: rgba(250, 250, 252, .8);
+    }
+}
+.movies_nav-header {
+    position: -webkit-sticky;
+    position: sticky;
+    width: 100%;
+    top: 0;
+    z-index: 10;
+    left: 0;
+}
+
+
+/* Apply these styles only for devices with screen width of 740px or more */
+@media only screen and (min-width: 740px) {
+    .movies_nav-header {
+        margin: auto;
+        height: 52px;
+    }
+}
+
+
+.movies-header-content{
+        position: relative;
+        max-width: 1680px;
+        z-index: 1;
+        padding-left: 25px;
+        padding-right: 25px;
+    
+}
+@media only screen and (min-width: 740px) {
+    .movies-header-content{
+        margin: auto;
+        padding-left: 40px;
+        padding-right: 40px;
+    }
+}
+
+.movies-header-content{
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    grid-template-areas: 'trigger logo auth';
+    align-items: center;
+}
+
+@media only screen and (min-width: 740px) {
+    .movies-header-content{
+        grid-template-rows: 52px;
+        grid-template-areas: 'opentv tvlinks auth';
+        width: 100%;
+    }
+}
+
+.mobile-nav-button {
+    width: auto;
+    height: 44px;
+    position: relative;
+    top: 0;
+    cursor: pointer;
+    transition: opacity .2s cubic-bezier(.645,.045,.355,1);
+    background-color: transparent;
+    border: none;
+    -webkit-tap-highlight-color: transparent;
+    z-index: 1;
+}
+.mobile-nav-button:active, .mobile-nav-button:focus, .mobile-nav-button:hover {
+    opacity: .65;
+}
+
+.moview-nav-header__mobile-tab {
+    font-size: 1.7rem;
+    font-weight: 700;
+    line-height: 1.23;
+}
+
+.movies-typ-headline-emph {
+    color: #000;
+    opacity: .92;
+    margin: 0 0.6rem;
+}
+
+.nav-header__buttons-wrapper {
+    display: none;
+    z-index: 1;
+}
+
+#mobile-navigator button{
+    background: none !important;
+    border: none !important;
+}
+
+@media only screen and (max-width: 600px) {
+    .movie-nav-header__desktop {
+        display: none;
+    }
+    .moview-nav-header__mobile-tab {
+        font-size: 1rem;
+        font-weight: 700;
+        line-height: 1.23;
+    }
+}
+
+.movie-nav-header__desktop-links {
+    margin-right: 16px;
+}
+.movie-nav-header__user-controls {
+    grid-area: auth;
+    display: flex;
+    align-items: center;
+    justify-self: end;
+    margin-right: 0;
+}
+
+.movie-user-button{
+    background: none !important;
+    border: none !important;
+}
+
+.movie-user-button {
+    height: 28px;
+    position: relative;
+    border-radius: 6px;
+    border-width: 1px;
+    border-style: solid;
+    background-color: transparent;
+    cursor: pointer;
+    color: #222;
+    z-index: 1;
+    font-size: 13px;
+    line-height: 1.30772;
+    font-weight: 500;
+    letter-spacing: 0;
+}
+
+.movie-nav-header__user-controls .movie-user-button{
+    margin-top: 0;
+    padding: 0;
+    border: none;
+    background-color: transparent;
+    color: #222;
+}
+
+/* This will hide the element on screens larger than 768px (typical breakpoint for tablets and larger) */
+@media screen and (min-width: 768px) {
+    .movies-header__dropdown-menu {
+        display: none;
+    }
+}
+
+
+
+/* This will show the element on screens smaller than 768px (typically mobile devices) */
+@media screen and (max-width: 767px) {
+    .movies-header__dropdown-menu {
+        display: block;
+    }
+}
+
+
+@media only screen and (min-width: 740px) {
+    .movie-nav-header__desktop {
+        display: block;
+    }
+}
+
+
+
+.movie-search-header__search{
+    margin-top: 24px;
+    width: 100%;
+    display: none;
+    position: relative;
+    z-index: 1;
+}
+
+@media only screen and (min-width: 740px) {
+    .movie-search-header__search{
+        margin-top: 0;
+        display: block;
+        grid-area: search;
+    }
+}
+
+@media only screen and (min-width: 740px) {
+    .movie-nav-header__desktop {
+        display: block;
+    }
+}
+
+@media only screen and (min-width: 740px) {
+    .movie-search-header__search-input-wrapper {
+        margin-right: 12px;
+        margin-top: 22px;
+    }
+}
+
+.movie-search-header__search-input-wrapper{
+    order: 2;
+}
+
+.movie-search-header__form-input-label {
+    position: absolute;
+    clip: rect(1px,1px,1px,1px);
+    -webkit-clip-path: inset(0 0 99.9% 99.9%);
+    clip-path: inset(0 0 99.9% 99.9%);
+    overflow: hidden;
+    height: 1px;
+    width: 1px;
+    padding: 0;
+    border: 0;
+}
+
+@media only screen and (min-width: 740px) {
+    .movie-nav-header__desktop-links {
+        grid-area: tvlinks;
+        justify-self: center;
+    }
+}
+
+.movie-nav-header__desktop-links {
+    margin-right: 16px;
+}
+
+
+.movie-nav-header__desktop-links-list{
+    display: flex;
+    gap: 30px;
+}

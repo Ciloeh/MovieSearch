@@ -1,0 +1,39 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #FFF;
+  color: #000;
+  font-family: "-apple-system",BlinkMacSystemFont,"-webkit-system-font","Malgun Gothic","Segoe UI","Helvetica Neue",Helvetica,sans-serif;
+}
+
+body, html {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  line-height: 1.23077;
+  font-weight: 400;
+}
+
+body, button, input, select, textarea {
+  font-synthesis: none;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.App{
+  min-height: calc(100% - 89px);
+}
+
+.App {
+  --footer-height-desktop: 89px;
+  --footer-height-mobile: 148px;
+  min-height: calc(100% - 89);
+  position: relative;
+}
