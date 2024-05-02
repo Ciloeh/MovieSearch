@@ -26,12 +26,12 @@ namespace MovieApiTest.Tests
 		public async Task GetUserById_ReturnsUser_WhenUserExists()
 		{
 			// Arrange
-			var expectedUser = new Users { Id = 1, Name = "Test User" };
-			_mockUsersService.Setup(service => service.GetUserByIdAsync(expectedUser.Id))
+			var expectedUser = new Users { phone = "08139014046", Name = "Test User" };
+			_mockUsersService.Setup(service => service.GetUserByIdAsync(expectedUser.phone))
 				.ReturnsAsync(expectedUser);
 
 			// Act
-			var result = await _controller.GetUserById(expectedUser.Id);
+			var result = await _controller.GetUserById(expectedUser.phone);
 
 			// Assert
 			var okResult = Assert.IsType<OkObjectResult>(result);

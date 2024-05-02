@@ -18,88 +18,60 @@ namespace MovieSearchApi.Tests
             _controller = new SearchQueriesController(_mockSearchQueryService.Object);
         }
 
-        [Fact]
-        public async Task SaveSearchQuery_ReturnsOk_WhenCalled()
-        {
-            // Arrange
-            var query = "test query";
+		[Fact]
+		public async Task SaveSearchQuery_ReturnsOk_WhenCalled()
+		{
+			// Arrange
+			var query = "test query";
+			var userid = 1;
 
-            // Act
-            var result = await _controller.SaveSearchedQuery(query);
+			// Act
+			var result = await _controller.SaveSearchedQuery(query, userid);
 
-            // Assert
-            Assert.IsType<OkResult>(result);
-            _mockSearchQueryService.Verify(service => service.SaveSearchQueryAsync(query), Times.Once);
-        }
+			// Assert
+			Assert.IsType<OkResult>(result);
+			_mockSearchQueryService.Verify(service => service.SaveSearchQueryAsync(query, userid), Times.Once);
+		}
 
-        [Fact]
+		[Fact]
 		public async Task GetLatestSearchQueries_ReturnsOkWithQueries_WhenCalled()
 		{
 			// Arrange
+			var id = 1;
 			var expectedQueries = new List<SearchQuery>
-	{
-		new SearchQuery
-		{
-			Id = 1,
-			Title = "title1",
-			Year = "year1",
-			Rated = "rated1",
-			Released = "released1",
-			Runtime = "runtime1",
-			Genre = "genre1",
-			Director = "director1",
-			Writer = "writer1",
-			Actors = "actors1",
-			Plot = "plot1",
-			Language = "language1",
-			Country = "country1",
-			Awards = "awards1",
-			Poster = "poster1",
-			Metascore = "metascore1",
-			ImdbRating = "imdbRating1",
-			ImdbVotes = "imdbVotes1",
-			ImdbID = "imdbID1",
-			Type = "type1",
-			DVD = "dvd1",
-			BoxOffice = "boxOffice1",
-			Production = "production1",
-			Website = "website1",
-			TimeStamp = DateTime.UtcNow
-		},
-        //  More SearchQuery can be Added here
-    };
-			_mockSearchQueryService.Setup(service => service.GetLatestSearchQueriesAsync())
+			{
+				// Add your SearchQuery objects here
+			};
+			_mockSearchQueryService.Setup(service => service.GetLatestSearchQueriesAsync(id))
 				.ReturnsAsync(expectedQueries);
 
 			// Act
-			var actionResult = await _controller.GetLatestSearchQueries();
+			var result = await _controller.GetLatestSearchQueries(id);
 
 			// Assert
-			var okResult = actionResult as OkObjectResult;
-			Assert.NotNull(okResult);
-			var returnedQueries = okResult.Value as IEnumerable<SearchQuery>;
-			Assert.NotNull(returnedQueries);
+			var okResult = Assert.IsType<OkObjectResult>(result);
+			var returnedQueries = Assert.IsType<List<SearchQuery>>(okResult.Value);
 			Assert.Equal(expectedQueries, returnedQueries);
 		}
-
 
 		[Fact]
 		public async Task DeleteSearchQuery_ReturnsOk_WhenCalledWithValidId()
 		{
 			// Arrange
-			int testId = 1; 
+			int id = 1;
 
 			// Set up the mock service to complete successfully when DeleteSearchQueryAsync is called.
-			_mockSearchQueryService.Setup(service => service.DeleteSearchQueryAsync(testId))
+			_mockSearchQueryService.Setup(service => service.DeleteSearchQueryAsync(id))
 				.Returns(Task.CompletedTask);
 
 			// Act
-			var result = await _controller.DeleteSearchedQuery(testId);
+			var result = await _controller.DeleteSearchedQuery(id);
 
 			// Assert
 			var okResult = Assert.IsType<OkResult>(result);
 			Assert.Equal(200, okResult.StatusCode);
 		}
+
 
 	}
 
