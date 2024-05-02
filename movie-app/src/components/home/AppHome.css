@@ -122,6 +122,8 @@
     top: -9999px;
     transition-duration: .15s;
     transition-property: opacity;
+    width: 100%;
+    
 }
 
 .movie-media-artwork-v2__image {
@@ -142,5 +144,100 @@ p>a{
     .mobile-disp {
         display: none;
     }
+    .movie-media-artwork-v2__image{
+        min-height: 280px;
+    }
 }
 
+.movie-collection-page__grid {
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    grid-gap: 10px;
+}
+
+@media only screen and (min-width: 740px) {
+    .movie-collection-page__grid{
+        grid-template-columns: repeat(3, 1fr);
+        grid-gap: 20px;
+    }
+}
+
+@media only screen and (min-width: 1000px) {
+    .movie-collection-page__grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+@media only screen and (min-width: 1320px) {
+    .movie-collection-page__grid {
+        grid-template-columns: repeat(5, 1fr);
+    }
+}
+
+.movie-collection-page__item {
+    overflow: hidden;
+    cursor: pointer !important;
+}
+
+.movie-editorial-item-lockup {
+    border-radius: 12px;
+}
+
+.movie-media-artwork-v2__container  {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+
+.movie-media-artwork-v2__container-serve{
+    border-radius: 12px;
+    box-sizing: border-box;
+    box-shadow: 0 4px 7px rgba(0,0,0,.25);
+    margin-bottom: 8px;
+    overflow: hidden;
+}
+
+.movie-media-artwork-v2__container-serve, .media-artwork-v2__image {
+    z-index: 1;
+}
+
+.movie-media-artwork-v2__container-serve  {
+    box-shadow: none;
+    margin-bottom: 0;
+    padding-top: 56.25%;
+    height: 100%;
+}
+
+.Movie-search-landing__header{
+    margin-bottom: 2rem;
+}
+
+@media only screen and (min-width: 740px) {
+    .mobile-disp {
+        display: none;
+    }
+    .movie-media-artwork-v2__image{
+        min-height: 280px;
+    }
+}
+
+.Single-moview-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px; /* Adjust as needed */
+    width: 100%;
+}
+
+
+.Single-view {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    margin: auto;
+    max-width: 800px; /* Adjust this value based on your needs */
+  }
+
+
+  

@@ -135,16 +135,149 @@ namespace MovieSearchApi.Migrations
 
                     MySqlPropertyBuilderExtensions.UseMySqlIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<string>("Query")
+                    b.Property<string>("Actors")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("Awards")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("BoxOffice")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("Country")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("DVD")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("Director")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("Genre")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("ImdbID")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("ImdbRating")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("ImdbVotes")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("Language")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("Metascore")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("Plot")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("Poster")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("Production")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("Rated")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("Released")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("Runtime")
                         .IsRequired()
                         .HasColumnType("longtext");
 
                     b.Property<DateTime>("TimeStamp")
                         .HasColumnType("datetime(6)");
 
+                    b.Property<string>("Title")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("Type")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.Property<int>("UserId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Website")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("Writer")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("Year")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
                     b.HasKey("Id");
 
+                    b.HasIndex("UserId");
+
                     b.ToTable("SearchQueries");
+                });
+
+            modelBuilder.Entity("MovieSearchApi.Model.Users", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    MySqlPropertyBuilderExtensions.UseMySqlIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.Property<DateTime>("dateadded")
+                        .HasColumnType("datetime(6)");
+
+                    b.Property<string>("phone")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("User");
+                });
+
+            modelBuilder.Entity("MovieSearchApi.Model.SearchQuery", b =>
+                {
+                    b.HasOne("MovieSearchApi.Model.Users", "User")
+                        .WithMany("SearchQueries")
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("User");
+                });
+
+            modelBuilder.Entity("MovieSearchApi.Model.Users", b =>
+                {
+                    b.Navigation("SearchQueries");
                 });
 #pragma warning restore 612, 618
         }

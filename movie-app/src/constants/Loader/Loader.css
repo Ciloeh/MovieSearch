@@ -1,0 +1,18 @@
+.absolute-shadow{
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    z-index: 123000;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #FAFAFA;
+    width: 100%;
+}
+
+.loades {
+    position: fixed; 
+    top: 50%; 
+    left: 50%; 
+    transform: translate(-50%, -50%); 
+  }
+  

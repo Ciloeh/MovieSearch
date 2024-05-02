@@ -17,6 +17,7 @@ namespace MovieSearchApi.Data
 
         public DbSet<MoviesDeatils> Movies { get; set; }
         public DbSet<SearchQuery> SearchQueries { get; set; }
+        public DbSet<Users> User { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {

@@ -28,19 +28,31 @@ namespace MovieSearchApi.Controllers
 		// It takes a string query as a parameter from the request body.
 		// It returns a 200 status code after successfully saving the query.
 		[HttpPost]
-		public async Task<IActionResult> SaveSearchQuery([FromBody] string query)
+		public async Task<IActionResult> SaveSearchedQuery(string query, int userid)
 		{
-			await _searchQueryService.SaveSearchQueryAsync(query);
+			await _searchQueryService.SaveSearchQueryAsync(query, userid);
 			return Ok();
 		}
 
 		// This is an HTTP GET method that retrieves the latest search queries.
 		// It returns a 200 status code with the list of latest search queries.
 		[HttpGet]
-		public async Task<IActionResult> GetLatestSearchQueries()
+		public async Task<IActionResult> GetLatestSearchQueries(int id)
 		{
-			var queries = await _searchQueryService.GetLatestSearchQueriesAsync();
+			var queries = await _searchQueryService.GetLatestSearchQueriesAsync(id);
 			return Ok(queries);
+		}
+
+
+		//Api to delete the last 5 searched movies
+		[HttpDelete("{id}")]
+		public async Task<IActionResult> DeleteSearchedQuery(int id)
+		{
+			// Calls the DeleteSearchQueryAsync method of the search query service.
+			// This method deletes the search query with the given ID from the database.
+			await _searchQueryService.DeleteSearchQueryAsync(id);
+			// Returns a 200 OK status code to indicate that the operation was successful.
+			return Ok();
 		}
 	}
 
