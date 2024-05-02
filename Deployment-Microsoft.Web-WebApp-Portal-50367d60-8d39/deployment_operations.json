@@ -1,0 +1,117 @@
+[
+  {
+    "id": "/subscriptions/3767d27c-fc82-4b0a-a415-37e7693929e8/resourceGroups/CSCR/providers/Microsoft.Resources/deployments/Microsoft.Web-WebApp-Portal-50367d60-8d39/operations/92B3095CD7417346",
+    "operationId": "92B3095CD7417346",
+    "properties": {
+      "provisioningOperation": "Create",
+      "provisioningState": "Succeeded",
+      "timestamp": "2024-05-02T12:44:45.1225074Z",
+      "duration": "PT25.4197937S",
+      "trackingId": "24ec10cf-62c7-4cb7-9688-2408fc348cb7",
+      "statusCode": "OK",
+      "targetResource": {
+        "id": "/subscriptions/3767d27c-fc82-4b0a-a415-37e7693929e8/resourceGroups/CSCR/providers/Microsoft.Web/sites/moviesearch/sourcecontrols/web",
+        "resourceType": "Microsoft.Web/sites/sourcecontrols",
+        "resourceName": "moviesearch/web"
+      }
+    }
+  },
+  {
+    "id": "/subscriptions/3767d27c-fc82-4b0a-a415-37e7693929e8/resourceGroups/CSCR/providers/Microsoft.Resources/deployments/Microsoft.Web-WebApp-Portal-50367d60-8d39/operations/56D8BEBB013F4AD7",
+    "operationId": "56D8BEBB013F4AD7",
+    "properties": {
+      "provisioningOperation": "Create",
+      "provisioningState": "Succeeded",
+      "timestamp": "2024-05-02T12:44:20.6447616Z",
+      "duration": "PT32.1140951S",
+      "trackingId": "eaadfe2b-3a87-4c23-926f-1730fbce6812",
+      "statusCode": "OK",
+      "targetResource": {
+        "id": "/subscriptions/3767d27c-fc82-4b0a-a415-37e7693929e8/resourceGroups/CSCR/providers/Microsoft.Web/sites/moviesearch/basicPublishingCredentialsPolicies/ftp",
+        "resourceType": "Microsoft.Web/sites/basicPublishingCredentialsPolicies",
+        "resourceName": "moviesearch/ftp"
+      }
+    }
+  },
+  {
+    "id": "/subscriptions/3767d27c-fc82-4b0a-a415-37e7693929e8/resourceGroups/CSCR/providers/Microsoft.Resources/deployments/Microsoft.Web-WebApp-Portal-50367d60-8d39/operations/EDD485003AF6C7C7",
+    "operationId": "EDD485003AF6C7C7",
+    "properties": {
+      "provisioningOperation": "Create",
+      "provisioningState": "Succeeded",
+      "timestamp": "2024-05-02T12:44:20.5272722Z",
+      "duration": "PT0.8245585S",
+      "trackingId": "b4bd1e82-be05-43e3-8caf-50d3957dd10f",
+      "statusCode": "OK",
+      "targetResource": {
+        "id": "/subscriptions/3767d27c-fc82-4b0a-a415-37e7693929e8/resourceGroups/CSCR/providers/Microsoft.Web/sites/moviesearch/basicPublishingCredentialsPolicies/scm",
+        "resourceType": "Microsoft.Web/sites/basicPublishingCredentialsPolicies",
+        "resourceName": "moviesearch/scm"
+      }
+    }
+  },
+  {
+    "id": "/subscriptions/3767d27c-fc82-4b0a-a415-37e7693929e8/resourceGroups/CSCR/providers/Microsoft.Resources/deployments/Microsoft.Web-WebApp-Portal-50367d60-8d39/operations/D72635BCC2DB06E2",
+    "operationId": "D72635BCC2DB06E2",
+    "properties": {
+      "provisioningOperation": "Create",
+      "provisioningState": "Succeeded",
+      "timestamp": "2024-05-02T12:44:19.6537564Z",
+      "duration": "PT31.1230899S",
+      "trackingId": "ff4668eb-ca12-4f84-b1af-fbb4f7befc77",
+      "statusCode": "OK",
+      "targetResource": {
+        "id": "/subscriptions/3767d27c-fc82-4b0a-a415-37e7693929e8/resourceGroups/CSCR/providers/Microsoft.Web/sites/moviesearch",
+        "resourceType": "Microsoft.Web/sites",
+        "resourceName": "moviesearch"
+      }
+    }
+  },
+  {
+    "id": "/subscriptions/3767d27c-fc82-4b0a-a415-37e7693929e8/resourceGroups/CSCR/providers/Microsoft.Resources/deployments/Microsoft.Web-WebApp-Portal-50367d60-8d39/operations/EC5C58A49A27C8BC",
+    "operationId": "EC5C58A49A27C8BC",
+    "properties": {
+      "provisioningOperation": "Read",
+      "provisioningState": "Succeeded",
+      "timestamp": "2024-05-02T12:43:55.2077148Z",
+      "duration": "PT6.6770483S",
+      "trackingId": "f557eeac-eb49-414b-879d-ab4aebbd231c",
+      "statusCode": "OK",
+      "targetResource": {
+        "id": "/subscriptions/3767d27c-fc82-4b0a-a415-37e7693929e8/resourceGroups/CSCR/providers/microsoft.insights/components/moviesearch",
+        "resourceType": "microsoft.insights/components",
+        "resourceName": "moviesearch",
+        "apiVersion": "2015-05-01"
+      }
+    }
+  },
+  {
+    "id": "/subscriptions/3767d27c-fc82-4b0a-a415-37e7693929e8/resourceGroups/CSCR/providers/Microsoft.Resources/deployments/Microsoft.Web-WebApp-Portal-50367d60-8d39/operations/59962595B401689C",
+    "operationId": "59962595B401689C",
+    "properties": {
+      "provisioningOperation": "Create",
+      "provisioningState": "Succeeded",
+      "timestamp": "2024-05-02T12:43:55.0576831Z",
+      "duration": "PT6.5270166S",
+      "trackingId": "0ec8ccd1-c02e-4c8e-a9ed-f05e00eb4a86",
+      "statusCode": "OK",
+      "targetResource": {
+        "id": "/subscriptions/3767d27c-fc82-4b0a-a415-37e7693929e8/resourceGroups/CSCR/providers/microsoft.insights/components/moviesearch",
+        "resourceType": "microsoft.insights/components",
+        "resourceName": "moviesearch"
+      }
+    }
+  },
+  {
+    "id": "/subscriptions/3767d27c-fc82-4b0a-a415-37e7693929e8/resourceGroups/CSCR/providers/Microsoft.Resources/deployments/Microsoft.Web-WebApp-Portal-50367d60-8d39/operations/08584869530608885934",
+    "operationId": "08584869530608885934",
+    "properties": {
+      "provisioningOperation": "EvaluateDeploymentOutput",
+      "provisioningState": "Succeeded",
+      "timestamp": "2024-05-02T12:44:45.2962084Z",
+      "duration": "PT0.1450501S",
+      "trackingId": "03a2e5b2-c61f-4b03-b11d-a0daed911ce8",
+      "statusCode": "OK"
+    }
+  }
+]
