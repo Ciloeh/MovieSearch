@@ -2,6 +2,8 @@ import { AxiosError } from "axios";
 
 export const MOVIES_API = 'https://localhost:44377/api';
 
+//export const MOVIES_API = "https://moviesearch.azurewebsites.net/api"
+
 
 
 export const handleAxiosError = (error: AxiosError) => {

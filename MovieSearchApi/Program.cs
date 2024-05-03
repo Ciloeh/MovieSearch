@@ -6,9 +6,12 @@ using System.Configuration;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
-builder.Services.AddDbContext<MovieDbContext>(options =>
-    options.UseMySql(connectionString, new MySqlServerVersion(new Version(8, 0, 21))));
+//builder.AddMySqlDataSource("DefaultConnection");
+//var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
+//builder.Services.AddDbContextPool<MovieDbContext>(options =>
+//	options.UseMySql(connectionString, new MySqlServerVersion(new Version(8, 0, 21))));
+builder.Services.AddDbContext<MovieDbContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+
 builder.Services.Configure<OmdbApiSettings>(builder.Configuration.GetSection("OmdbApi"));
 builder.Services.AddScoped<IMovieService, MovieServices>();
 builder.Services.AddScoped<IUsersService, UsersService>();
@@ -43,12 +46,10 @@ var app = builder.Build();
 // Configure the HTTP request pipeline.
 //if (app.Environment.IsDevelopment())
 //{
-//    app.UseSwagger();
-//    app.UseSwaggerUI();
+//	app.UseSwagger();
+//	app.UseSwaggerUI();
 //}
 
-
-//IS PRODUCTION
 if (app.Environment.IsProduction())
 {
 	app.UseSwagger();
